@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <title>Document</title> -->
+</head>
+
+<body>
+    <div class="content">
+        <div ng-controller="directorycontroller">
+            <!-- <input type="text" ng-model="searchvalue" placeholder="search for the movie"> -->
+            <button ng-click="order = 'movieName'">Order By MovieName</button>
+            <button ng-click="order = '-rating'">Order By Rating</button>
+            <button ng-click="addamovie()">Add a New Movie</button>
+            <div ng-show="count">
+                <form ng-submit="addMovie()">
+                    <input type="text" placeholder="movename" ng-model="newmovie.name">
+                    <input type="text" placeholder="rating" ng-model="newmovie.rating">
+                    <input type="text" placeholder="genre" ng-model="newmovie.genre">
+                    <input type="submit" value="Add a movie" name="" id="">
+                </form>
+            </div>
+            <ol>
+                <li ng-repeat="Movies in movieinfo |orderBy: order | filter: searchvalue">
+                    <img ng-src="{{Movies.img}}" style="margin: -12px 10px 0 0;float:left;width: 50px;">
+                    <p>{{Movies.movieName}}</p>
+                    <span>{{Movies.genre}}</span>
+                    <p>Rating:- {{Movies.rating}}</p>
+                    <div class="remove" ng-click="removemovie(Movies)">X</div>
+                </li>
+            </ol>
+            
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+[
+    {
+        "movieName": "Doctor Strange",
+        "rating": 8.5,
+        "genre": "sci-fi",
+        "available": true,
+        "img": "images/ds.jpg"
+    },
+    {
+        "movieName": "Radhe Shyam",
+        "rating": 9,
+        "genre": "sci-fi",
+        "available": true,
+        "img": "images/radheshyam.jpg"
+    },
+    {
+        "movieName": "Rise Roar Revolt (RRR)",
+        "rating": 9,
+        "genre": "History",
+        "available": false,
+        "img": "images/rrr.jpg"
+    },
+    {
+        "movieName": "The BatMan 2022",
+        "rating": 9,
+        "genre": "sci-fi",
+        "available": true,
+        "img": "images/batman.jpg"
+    },
+    {
+        "movieName": "Bheemla Nayak",
+        "rating": 8,
+        "genre": "Drama",
+        "available": true,
+        "img": "images/bheemla.jpg"
+    },
+    {
+        "movieName": "KGF",
+        "rating": 8.5,
+        "genre": "Drama",
+        "available": false,
+        "img": "images/kgf.jpg"
+    }
+]
