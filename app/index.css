@@ -32,6 +32,10 @@
   #menubar a{
     color: #fff
   }
+  .formcontent{
+    background-color: yellowgreen;
+  }
+
   .content{
     padding: 20px;
   }
@@ -84,3 +88,6 @@
     cursor: pointer;
     margin-left: 10px;
   }  
+  input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+    border: 2px solid red;
+  }

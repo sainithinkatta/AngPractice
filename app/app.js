@@ -7,10 +7,10 @@ const myapp = angular.module('myapp', ['ngRoute']);
 myapp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         //path name
-        .when('/home', {
+        .when('/contact', {
             //path location declaration
-
-            templateUrl: 'views/home.html'
+            templateUrl: 'views/contact.html',
+            controller: 'directorycontroller'
         })
         .when('/directory', {
             //path location declaration
@@ -23,8 +23,29 @@ myapp.config(['$routeProvider', function ($routeProvider) {
         })
 }])
 
-// //this function loads while your application runs
-// myapp.run(function(){
+//writing the function for our directives and we use directive name as a camelcase here 
+//and pass the dependencies and call the function
+myapp.directive('movieList',[function(){
+    //it returns the object containing the elements
+    return {
+        //it restrict the directive to certain elements and attributes as E A
+        restrict: 'E',
+        //scope is declared to render the data
+        scope: {
+            movieinfo: "=",
+            title: "=",
+            
+        },
+        //template used to directly write the tag here
+        //templateUrl to refer to view from some other html page.
+        templateUrl: 'views/random.html',
+        transclude: true,
+        //have a controller to write the function to access the objects data
+        controller: function($scope){
+            $scope.random = Math.floor(Math.random() * 4);
+        }
+    };
+}])
 
 // })
 myapp.controller('myappview', ['$scope', function ($scope) {
