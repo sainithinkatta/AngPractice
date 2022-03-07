@@ -1,0 +1,53 @@
+/* FEEDBACK-PAGE-CSS */
+.feedback-container{
+    padding: 20px;
+  }
+
+.feedback-container h2{
+    text-align: center;
+    font-size: xx-large;
+}
+/* FEEDBACK-FORM-ELEMENTS */
+.field_label {
+  display: block;
+  text-align: center;
+  font-size: medium;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+.field_input {
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    display: block;
+    margin: auto;
+    padding: 8px 14px;
+  }
+  .field_textarea {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 16px;
+  }
+  /* FEEDBACK-FORM-ERROR-DISPLAY-BLOCK  */
+.field_small{
+  display: block;
+  text-align: center;
+  font-size: medium;
+  color:red;
+  }
+  /* FEEDBACK-FORM-SUBMIT-BUTTON  */
+.field_submit{
+  background-color: #4CAF50;
+  border: 2px solid rgb(141, 141, 141);
+  border-radius: 5px;
+  cursor: pointer;
+  width: 83px;
+  display: block;
+  margin: auto;
+  color: white;
+  margin-top: 20px;
+}

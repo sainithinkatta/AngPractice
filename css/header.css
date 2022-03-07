@@ -1,0 +1,23 @@
+.header-page-container{
+    background: crimson;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .homepage_navigation{
+      margin-left: 30px;
+  }
+  .header-page-container h1{
+    text-align: center;
+  }
+  .header-page-container a{
+    color: #fff
+  }
+  .navigation_item_separator{
+    margin: auto 4px;
+  }
+  .header_navigation{
+      padding: 30px 30px;
+  }

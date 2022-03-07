@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/feedback.css">
+</head>
+
+<body>
+    <div ng-app="feedbackModule" ng-controller="feedbackController" class="feedback-container">
+        <h2>Customer Feed-Back</h2>
+        <form id="feedback-form" name="feedbackForm" ng-submit="feedbackFormSubmit()">
+            
+            <div class="feedback-form_field field">
+                <label 
+                    class="field_label"
+                    for="user-name">
+                    Name
+                </label>
+                <input 
+                    id="user-name"
+                    class="field_input" 
+                    type="text" 
+                    name="name" 
+                    placeholder="Enter your name(minimum: 3 letters)" 
+                    ng-model="userFeedback.name"
+                    ng-minlength="3" 
+                    ng-required="true"
+                >
+                <small 
+                    class="field_small"
+                    ng-show="feedbackForm.name.$touched && feedbackForm.name.$invalid">
+                    Enter a valid name
+                </small>
+            </div>
+            
+            <div class="feedback-form_field field">
+                <label 
+                    class="field_label"
+                    for="user-email">
+                    Email
+                </label>
+                <input 
+                    id="user-email" 
+                    class="field_textarea"
+                    type="email" 
+                    name="email" 
+                    placeholder="Enter your email" 
+                    ng-model="userFeedback.email"
+                    ng-required="true"
+                >
+                <small 
+                    class="field_small"
+                    ng-show="feedbackForm.email.$touched && feedbackForm.email.$invalid">
+                    Enter a valid email
+                </small>
+            </div>
+
+            <div class="feedback-form_field field">
+                <label 
+                    class="field_label"
+                    for="user-feedback">
+                    Feedback
+                </label>
+                <textarea 
+                    id="user-feedback"
+                    class="field_input"
+                    name="feedback" 
+                    rows="5" 
+                    cols="33" 
+                    placeholder="Enter your query/feedback"
+                    ng-model="userFeedback.message" 
+                    ng-required="true">
+                </textarea>
+                <small 
+                    class="field_small"
+                    ng-show="feedbackForm.feedback.$touched && feedbackForm.feedback.$invalid"
+                    >
+                    Enter a proper message
+                </small>
+            </div>
+
+            <div class="feedback-form_field field">
+                <input
+                    id="form-submit"
+                    class="field_submit"
+                    type="submit" 
+                    value="SUBMIT"
+                >
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

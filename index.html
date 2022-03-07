@@ -2,28 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="app/index.css">
+    <title>movies</title>
+    <link rel="stylesheet" href="css/index.css">
     <script src="app/angular.js"></script>
-    <!-- <script src="app/angular.min.js"></script> -->
     <script src="app/angular-route.min.js"></script>
-    <script src="app/app.js"></script>
-
-
+    <script src="app/index.js"></script>
+    <script src="js/feedback.js"></script>
+    <script src="js/movieslist.js"></script>
 </head>
 
 <body>
     <div ng-app="myapp">
-        <header ng-include="'content/header.html'"></header>
-        <!-- <h1>Hello Page</h1> -->
-        <!-- <div ng-controller="myappview"> -->
-            <div ng-view></div>
-        <!-- </div> -->
+        <header ng-include="'views/header.html'"></header>
+        <div ng-view></div>
     </div>
-
 </body>
 
 </html>
