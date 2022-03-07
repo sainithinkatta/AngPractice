@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/addmovie.css">
+    <script src="js/addmovie.js"></script>
+</head>
+
+<body>
+    <div 
+        ng-app="addMovieModule" 
+        ng-controller="addMovieController"
+    >
+        <form 
+            class="add-movie-container"
+            ng-submit="addMovie()" 
+        >
+            <div class="add-movie-name field">
+                <label for="inputmoviename">
+                    Movie Name
+                </label>
+                <input 
+                    id="inputmoviename" 
+                    class="input-movie-name" 
+                    type="text" 
+                    placeholder="Enter Movie Name"
+                    ng-model="newMovie.name" 
+                    ng-required="true"
+                >
+            </div>
+
+            <div class="add-movie-rating field">
+                <label for="inputmovierating">
+                    Movie Rating
+                </label>
+                <input 
+                    id="inputmovierating" 
+                    class="nput-movie-rating" 
+                    type="number"
+                    placeholder="Enter Movie Rating" 
+                    ng-model="newMovie.rating" 
+                    ng-required="true"
+                >
+            </div>
+
+            <div class="add-movie-image field">
+                <label for="inputmovieimage">
+                    Movie Image Url
+                </label>
+                <input 
+                    id="inputmovieimage" 
+                    class="nput-movie-image" 
+                    type="text"
+                    placeholder="Enter Movie Image Url" 
+                    ng-model="newMovie.image" 
+                    ng-required="true"
+                >
+            </div>
+
+            <div class="add-movie-trailer field">
+                <label for="inputmovietrailer">
+                    Movie Trailer Url
+                </label>
+                <input 
+                    id="inputmovietrailer" 
+                    class="nput-movie-trailer" 
+                    type="text"
+                    placeholder="Enter Movie Trailer Url" 
+                    ng-model="newMovie.trailer" 
+                    ng-required="true"
+                >
+            </div>
+
+            <div class="add-movie-submit-btn ">
+                <input
+                    id="addmoviesubmitbutton" 
+                    type="submit" 
+                    value="Add a movie"
+                >
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

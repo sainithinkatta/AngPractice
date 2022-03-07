@@ -1,55 +1,35 @@
 let movie = angular.module('movieListModule', []);
 
-movie.service('movieService', ['$http', function($http){
-    this.getMovieDetails = function getMovieDetails() {
-        return $http.get('data/movieinfo.json');
+movie.service('movieService', ['$http', function ($http) {
+    this.getMovieDetails = function() {
+        return $http.get("http://localhost:3000/movies");
     };
-    this.test = function(){
-       let a = 10;
-       return a;
-    }
+
+    this.recommendedMovies = function() {
+        return $http.get("http://localhost:3000/recommendedMovies");
+    };
 }])
 
 
-movie.controller('movieController', ['movieService', '$scope', '$rootScope', '$http', function (movieService, $scope ,$rootScope, $http) {
-
-
+movie.controller('movieController', ['movieService', '$scope', '$rootScope', '$http', function (movieService, $scope, $rootScope, $http) {
     movieService.getMovieDetails().then(function (response) {
+        // $scope.recommendMovies = true;
         console.log(response.data)
-        $scope.movieinfo = response.data;
+        $scope.movieInfo = response.data;
     });
 
-    $scope.a = movieService.test();
-    console.log($scope.a);
+    movieService.recommendedMovies().then(function (response) {
+        // $scope.recommendMovies = false;
+        console.log(response.data)
+        $scope.recommendedMovies = response.data;
+    });
 
-
-    // $http.get('data/movieinfo.json').then(function (response) {
-    //     console.log(response.data)
-    //     $scope.movieinfo = response.data;
-    // });
-    // $rootScope.value = 10;
-    // $scope.removemovie = function (Movies) {
-    //     var removedmovie = $scope.movieinfo.indexOf(Movies);
-    //     console.log(removedmovie)
-    //     //splice(a,b) it removes a and go to 1 element next
-    //     $scope.movieinfo.splice(removedmovie, 1);
-    // }
-    // $scope.count = false;
-    // $scope.addamovie = function () {
-    //     $scope.count = true;
-    // }
-    // $scope.addMovie = function () {
-    //     $scope.movieinfo.push({
-    //         movieName: $scope.newmovie.name,
-    //         rating: parseInt($scope.newmovie.rating),
-    //         genre: $scope.newmovie.genre,
-    //         available: true
-    //     });
-
-    //     $scope.newmovie.name = "", x
-    //     $scope.newmovie.rating = "",
-    //         $scope.newmovie.genre = ""
-    // };
-
+    $scope.removeMovie = function (Movies) {
+        var removedMovie = $scope.movieInfo.indexOf(Movies);
+        console.log(removedMovie)
+        //splice(a,b) it removes a and go to 1 element next
+        $scope.movieInfo.splice(removedMovie, 1);
+        alert("Movie removed successfully!");
+    }
 }]);
 

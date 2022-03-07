@@ -2,37 +2,83 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="css/movieslist.css">
 </head>
 
 <body>
-    <div ng-app="movieListModule" ng-controller="movieController" class="movie_content_controller" >
-        <div>
-            <!-- <input type="text" ng-model="searchvalue" placeholder="search for the movie">
-            <button ng-click="order = 'movieName'">Order By MovieName</button>
-            <button ng-click="order = '-rating'">Order By Rating</button>
-            <button ng-click="addamovie()">Add a New Movie</button>
-            <div ng-show="count">
-                <form ng-submit="addMovie()">
-                    <input type="text" placeholder="movename" ng-model="newmovie.name">
-                    <input type="text" placeholder="rating" ng-model="newmovie.rating">
-                    <input type="text" placeholder="genre" ng-model="newmovie.genre">
-                    <input type="submit" value="Add a movie" name="" id="">
-                </form>
-            </div> -->
-            <ol>
-                <li ng-repeat="Movies in movieinfo |orderBy: order | filter: searchvalue">
-                    <img ng-src="{{Movies.img}}" style="margin: -12px 10px 0 0;float:left;width: 50px;">
-                    <p>{{Movies.movieName}}</p>
-                    {{ value }}
-                    <span>{{Movies.genre}}</span>
-                    <p>Rating:- {{Movies.rating}}</p>
-                    <div class="remove" ng-click="removemovie(Movies)">X</div>
-                </li>
-            </ol>
+    <div 
+        ng-app="movieListModule" 
+        ng-controller="movieController"
+    >
+            <div class="movies-search-field">
+                <input 
+                    id="inputmovies"
+                    class="search" 
+                    type="text" 
+                    ng-model="searchMovie" 
+                    placeholder="Search for movies here..."
+                />
+            </div>                      
+            <div class="filters-btn btn">
+                <button 
+                    class="orderby-movie-btn"
+                    ng-click="order = 'movieName'">
+                    Order By Movie Name
+                </button>
+                <button 
+                    class="orderby-rating-btn"
+                    ng-click="order = '-movieRating'">
+                    Order By Rating
+                </button>
+                <button 
+                    class="view-feedback-btn">
+                    <a 
+                        id="movieslist-page-field" 
+                        href="/index.html#!/viewfeedback"
+                    >
+                    View feedback
+                    </a>
+                </button>
+                <button 
+                    class="addmovie-btn">
+                    <a 
+                        id="addmovie-page-field" 
+                        href="/index.html#!/addmovie"
+                    >
+                    Add Movie
+                    </a>
+                </button>
+            </div>
             
+            <div 
+                class="show_movies">
+                <div 
+                    ng-repeat="movie in movieInfo | orderBy: order | filter: searchMovie"
+                    class="movies-as-cards"   
+                >       
+                        <a 
+                                href="{{ movie.trailerUrl }}">
+                                <img 
+                                    ng-src="{{ movie.movieImage }}" 
+                                    alt="Image of {{ movie.movieName }}"
+                                >
+                            </a>
+                            <h2>
+                                {{ movie.movieName }}
+                            </h2>
+                            <p>
+                                Rating:- {{ movie.movieRating }}
+                            </p>
+                            <button
+                                class="remove-movie-btn"
+                                ng-click="removeMovie(movie)">
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
-
 </body>
 
 </html>

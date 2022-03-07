@@ -1,6 +1,6 @@
 //this variable is holding the module its reference to it. [] is used to pass the dependencies.
 //var name should be equal to module name
-const myapp = angular.module('myapp', ['ngRoute','feedbackModule','movieListModule']);
+const myapp = angular.module('myapp', ['ngRoute','feedbackModule','movieListModule','feedbackModule','addMovieModule']);
 // //this function runs loads before your application runs
 
 myapp.config(['$routeProvider', function ($routeProvider) {
@@ -16,6 +16,18 @@ myapp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'views/movieslist.html',
             //declare which controller we want to use for this directory
             controller: 'movieController'
+        })
+        .when('/viewfeedback', {
+            //path location declaration
+            templateUrl: 'views/view-feedback.html',
+            //declare which controller we want to use for this directory
+            controller: 'viewFeedbackController'
+        })
+        .when('/addmovie', {
+            //path location declaration
+            templateUrl: 'views/addmovie.html',
+            //declare which controller we want to use for this directory
+            controller: 'addMovieController'
         })
         .otherwise({
             redirectTo: '/home'

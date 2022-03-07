@@ -1,0 +1,22 @@
+.view-feedback-container {
+    margin-top: 10px;
+   
+}
+.view-feedback-container h2 {
+    text-align: center;
+}
+
+.feedback-data-display.data{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    text-align: center;
+    display: block;
+    margin: auto;
+    font-size: larger;
+    border:none;
+    
+}
+.feedback-data-display.data span{
+    font-style:italic;
+}

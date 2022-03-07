@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/view-feedback.css">
+</head>
+
+<body>
+    <div 
+        class="view-feedback-container" 
+        ng-app="feedbackModule" 
+        ng-controller="viewFeedbackController"
+    >
+        <h2> USER REVIEWS </h2>
+        <div 
+            class="feedback-data-display" 
+            ng-repeat="review in feedbackData"
+        >
+            <div class="feedback-data-display data" >
+                Name:- 
+                <span> 
+                    {{ review.userName }} 
+                </span>
+            </div>
+
+            <div class="feedback-data-display data">
+                Email:- 
+                <span> 
+                    {{ review.userEmail }} 
+                </span>
+            </div>
+            <div class="feedback-data-display data">
+                FeedBack:-
+                <span> 
+                    {{ review.userFeedback }} 
+                </span>
+            </div>
+            <hr>
+        </div>
+    </div>
+</body>
+
+</html>

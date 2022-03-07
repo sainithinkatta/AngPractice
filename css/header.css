@@ -11,6 +11,8 @@
   }
   .header-page-container h1{
     text-align: center;
+    float:right;
+  
   }
   .header-page-container a{
     color: #fff
