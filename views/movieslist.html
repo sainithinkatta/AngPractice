@@ -18,7 +18,8 @@
                     ng-model="searchMovie" 
                     placeholder="Search for movies here..."
                 />
-            </div>                      
+            </div>  
+                                
             <div class="filters-btn btn">
                 <button 
                     class="orderby-movie-btn"
@@ -53,31 +54,31 @@
             <div 
                 class="show_movies">
                 <div 
-                    ng-repeat="movie in movieInfo | orderBy: order | filter: searchMovie"
-                    class="movies-as-cards"   
-                >       
-                        <a 
-                                href="{{ movie.trailerUrl }}">
-                                <img 
-                                    ng-src="{{ movie.movieImage }}" 
-                                    alt="Image of {{ movie.movieName }}"
-                                >
-                            </a>
-                            <h2>
-                                {{ movie.movieName }}
-                            </h2>
-                            <p>
-                                Rating:- {{ movie.movieRating }}
-                            </p>
-                            <button
-                                class="remove-movie-btn"
-                                ng-click="removeMovie(movie)">
-                                Remove
-                            </button>
-                        </div>
-                    </div>
+                    class="movies-as-cards"
+                    ng-repeat="movie in movieInfo | orderBy: order | filter: searchMovie"    
+                >
+                    <a href="{{ movie.trailerUrl }}">
+                        <img 
+                            ng-src="{{ movie.movieImage }}" 
+                            alt="Image of {{ movie.movieName }}"
+                        >
+                    </a>
+                    <h2>
+                        {{ movie.movieName | uppercase }}
+                    </h2>
+                    <p>
+                        Rating:- {{ movie.movieRating }}
+                    </p>
+                    <button 
+                        class="remove-movie-btn" 
+                        ng-click="removeMovie(movie)"
+                    >
+                        Remove
+                    </button>
                 </div>
-        </div>
+            </div>
+            </div>
+            </div>
     </div>
 </body>
 

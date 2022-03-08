@@ -1,7 +1,8 @@
-//this variable is holding the module its reference to it. [] is used to pass the dependencies.
+//this variable is holding the module its reference to it. [] is used to pass the dependencies
 //var name should be equal to module name
+//injecting all the different module in the main module that contains the angular components
 const myapp = angular.module('myapp', ['ngRoute','feedbackModule','movieListModule','feedbackModule','addMovieModule']);
-// //this function runs loads before your application runs
+ //this function runs loads before your application runs.
 
 myapp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
@@ -58,10 +59,6 @@ myapp.directive('movieList',[function(){
     };
 }])
 
-// })
-// myapp.controller('feedbackController', ['$scope', function ($scope) {
-//     console.log("Hello myappview")
-// }])
 
 
 
