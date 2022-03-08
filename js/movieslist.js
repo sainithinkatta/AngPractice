@@ -1,13 +1,11 @@
 let movie = angular.module('movieListModule', []);
 
 movie.service('movieService', ['$http', function ($http) {
-    this.getMovieDetails = function() {
-        return $http.get("http://localhost:3000/movies");
+    this.getMovieDetails = function () {
+        return $http.get('http://localhost:3000/movies');
     };
 
-    this.recommendedMovies = function() {
-        return $http.get("http://localhost:3000/recommendedMovies");
-    };
+
 }])
 
 
@@ -18,18 +16,24 @@ movie.controller('movieController', ['movieService', '$scope', '$rootScope', '$h
         $scope.movieInfo = response.data;
     });
 
-    movieService.recommendedMovies().then(function (response) {
-        // $scope.recommendMovies = false;
-        console.log(response.data)
-        $scope.recommendedMovies = response.data;
-    });
 
     $scope.removeMovie = function (Movies) {
-        var removedMovie = $scope.movieInfo.indexOf(Movies);
-        console.log(removedMovie)
-        //splice(a,b) it removes a and go to 1 element next
-        $scope.movieInfo.splice(removedMovie, 1);
-        alert("Movie removed successfully!");
+        console.log(Movies.id)
+        
+        $http.delete('http://localhost:3000/movies/' + Movies.id)
+        .then(function successCallback(response) {
+
+            alert("Movie has been removed Successfully");
+            var removedMovie = $scope.movieInfo.indexOf(Movies);
+            console.log(removedMovie)
+            //splice(a,b) it removes a and go to 1 element next
+            $scope.movieInfo.splice(removedMovie, 1);
+
+        }, function errorCallback(response) {
+
+            alert("Error. while deleting user Try Again!");
+
+        });
     }
 }]);
 

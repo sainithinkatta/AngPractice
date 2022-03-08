@@ -17,23 +17,6 @@
     <div ng-app="myapp">
         <header ng-include="'views/header.html'"></header>
         <div ng-view></div>
-        <!-- <div ng-controller="movieController" ng-show="recommendMovies">
-            <div class="show_movies">
-                <div ng-repeat="movie in recommendedMovies | orderBy: order | filter: searchMovie"
-                    class="movies-as-cards">
-                    <a href="{{ movie.trailerUrl }}">
-                        <img ng-src="{{ movie.movieImage }}" alt="Image of {{ movie.movieName }}">
-                    </a>
-                    <h2>
-                        {{ movie.movieName }}
-                    </h2>
-                    <p>
-                        Rating:- {{ movie.movieRating }}
-                    </p>
-                </div>
-            </div>
-        </div> -->
-        
     </div>
 
     </div>
