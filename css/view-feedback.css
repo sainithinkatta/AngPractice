@@ -1,11 +1,13 @@
+/* ENTIRE FEEEDBACK CONTAINER  */
 .view-feedback-container {
     margin-top: 10px;
    
 }
+/* FEEDBACK PAGE MAIN HEADING   */
 .view-feedback-container h2 {
     text-align: center;
 }
-
+/* FEEDBACK DATA DISPLAY DIVISION  */
 .feedback-data-display.data{
     padding-top: 15px;
     padding-bottom: 15px;

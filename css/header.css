@@ -1,3 +1,4 @@
+/* WHOLE HEADER CONTAINER  */
 .header-page-container{
     background: crimson;
     color: #fff;
@@ -6,14 +7,17 @@
     flex-direction: row;
     justify-content: space-between;
   }
+  /* HOME PAGE FEATURE TO NAVIGATE TO HOME PAGE  */
   .homepage_navigation{
       margin-left: 30px;
   }
+  /* MAIN HEADING IN THE HEADER  */
   .header-page-container h1{
     text-align: center;
     float:right;
   
   }
+  /* HEADER CONTAINER ITEMS  */
   .header-page-container a{
     color: #fff
   }
