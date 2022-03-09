@@ -4,23 +4,25 @@
 <head>
     <title>movies</title>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/movieslist.css">
     <script src="app/angular.js"></script>
     <script src="app/angular-route.min.js"></script>
-    <script src="app/index.js"></script>
-    <script src="js/feedback.js"></script>
-    <script src="js/movieslist.js"></script>
-    <script src="js/addmovie.js"></script>
+    <script src="index.js"></script>
+    <script src="controllers/movies-add-controller.js"></script>
+    <script src="controllers/movies-add-feedback-controller.js"></script>
+    <script src="controllers/movieslist-controller.js"></script>
+    <script src="controllers/movies-display-feedback-controller.js"></script>
+    <script src="services/movieslist-service.js"></script>
+    <script src="services/movie-feedback-service.js"></script>
+    
 </head>
 
 <body>
-    <div ng-app="myapp">
+    <div ng-app="myMoviesApp">
         <header ng-include="'views/header.html'"></header>
         <div ng-view></div>
     </div>
 
     </div>
-
 </body>
 
 </html>

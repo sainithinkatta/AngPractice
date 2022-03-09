@@ -1,10 +1,10 @@
 //this variable is holding the module its reference to it. [] is used to pass the dependencies
 //var name should be equal to module name
 //injecting all the different module in the main module that contains the angular components
-const myapp = angular.module('myapp', ['ngRoute','feedbackModule','movieListModule','feedbackModule','addMovieModule']);
+const myMoviesApp = angular.module('myMoviesApp', ['ngRoute']);
  //this function runs loads before your application runs.
 
-myapp.config(['$routeProvider', function ($routeProvider) {
+myMoviesApp.config(['$routeProvider','$locationProvider', function ($routeProvider,$locationProvider) {
     $routeProvider
         //path name
         .when('/feedback', {
@@ -31,13 +31,13 @@ myapp.config(['$routeProvider', function ($routeProvider) {
             controller: 'addMovieController'
         })
         .otherwise({
-            redirectTo: '/home'
+            redirectTo: '/movies'
         })
 }])
 
 //writing the function for our directives and we use directive name as a camelcase here 
 //and pass the dependencies and call the function
-myapp.directive('movieList',[function(){
+myMoviesApp.directive('movieList',[function(){
     //it returns the object containing the elements
     return {
         //it restrict the directive to certain elements and attributes as E A

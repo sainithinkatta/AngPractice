@@ -17,12 +17,12 @@
     width: 150px;
     display: block;
 }
-.filters-btn {
+.movie-action-list {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.filters-btn button {
+.movie-action-list button {
     cursor: pointer;
     margin-right: 5px;
     background-color: rgb(15, 164, 223);

@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <link rel="stylesheet" href="css/movieslist.css">
-</head>
-
-<body>
+<link rel="stylesheet" href="css/movieslist.css">
     <div 
-        ng-app="movieListModule" 
         ng-controller="movieController"
     >
             <div class="movies-search-field">
                 <input 
-                    id="inputmovies"
-                    class="search" 
+                    id="searchForMovies"
+                    class="search-movies" 
                     type="text" 
                     ng-model="searchMovie" 
                     placeholder="Search for movies here..."
                 />
             </div>  
-                                
-            <div class="filters-btn btn">
+
+            <div class="movie-action-list">
                 <button 
                     class="orderby-movie-btn"
-                    ng-click="order = 'movieName'">
+                    ng-click = "orderByMovieName()">
+                    <!-- "order = 'movieName'" -->
                     Order By Movie Name
                 </button>
                 <button 
@@ -34,8 +27,8 @@
                 <button 
                     class="view-feedback-btn">
                     <a 
-                        id="movieslist-page-field" 
-                        href="/index.html#!/viewfeedback"
+                        id="viewMoviesFeedbackField" 
+                        ng-href="/index.html#!/viewfeedback"
                     >
                     View feedback
                     </a>
@@ -43,22 +36,22 @@
                 <button 
                     class="addmovie-btn">
                     <a 
-                        id="addmovie-page-field" 
-                        href="/index.html#!/addmovie"
+                        id="addMoviesField" 
+                        ng-href="/index.html#!/addmovie"
                     >
                     Add Movie
                     </a>
                 </button>
             </div>
             
-            <div 
-                class="show_movies">
+            <div class="show_movies">
                 <div 
                     class="movies-as-cards"
-                    ng-repeat="movie in movieInfo | orderBy: order | filter: searchMovie"    
+                    ng-repeat="movie in moviesList | orderBy: order | filter: searchMovie"    
                 >
-                    <a href="{{ movie.trailerUrl }}">
+                    <a ng-href="{{ movie.trailerUrl }}">
                         <img 
+                            id="movieImage" 
                             ng-src="{{ movie.movieImage }}" 
                             alt="Image of {{ movie.movieName }}"
                         >
@@ -80,6 +73,4 @@
             </div>
             </div>
     </div>
-</body>
 
-</html>

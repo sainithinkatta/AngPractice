@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/addmovie.css">
-    <script src="js/addmovie.js"></script>
-</head>
-
-<body>
-    <div 
-        ng-app="addMovieModule" 
+<link rel="stylesheet" href="css/addmovie.css">
+<div
         ng-controller="addMovieController"
     >
         <form 
@@ -19,11 +8,11 @@
             ng-submit="addMovie()" 
         >
             <div class="add-movie-name field">
-                <label for="inputmoviename">
+                <label for="inputMovieName">
                     Movie Name
                 </label>
                 <input 
-                    id="inputmoviename" 
+                    id="inputMovieName" 
                     class="input-movie-name" 
                     type="text" 
                     placeholder="Enter Movie Name"
@@ -33,11 +22,11 @@
             </div>
 
             <div class="add-movie-rating field">
-                <label for="inputmovierating">
+                <label for="inputMovierating">
                     Movie Rating
                 </label>
                 <input 
-                    id="inputmovierating" 
+                    id="inputMovierating" 
                     class="nput-movie-rating" 
                     type="number"
                     placeholder="Enter Movie Rating" 
@@ -47,11 +36,11 @@
             </div>
 
             <div class="add-movie-image field">
-                <label for="inputmovieimage">
+                <label for="inputMovieImage">
                     Movie Image Url
                 </label>
                 <input 
-                    id="inputmovieimage" 
+                    id="inputMovieImage" 
                     class="nput-movie-image" 
                     type="text"
                     placeholder="Enter Movie Image Url" 
@@ -61,11 +50,11 @@
             </div>
 
             <div class="add-movie-trailer field">
-                <label for="inputmovietrailer">
+                <label for="inputMovieTrailer">
                     Movie Trailer Url
                 </label>
                 <input 
-                    id="inputmovietrailer" 
+                    id="inputMovieTrailer" 
                     class="nput-movie-trailer" 
                     type="text"
                     placeholder="Enter Movie Trailer Url" 
@@ -76,13 +65,10 @@
 
             <div class="add-movie-submit-btn ">
                 <input
-                    id="addmoviesubmitbutton" 
+                    id="addMovieSubmitButton" 
                     type="submit" 
                     value="Add a movie"
                 >
             </div>
         </form>
-    </div>
-</body>
-
-</html>
+</div>
