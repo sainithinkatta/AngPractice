@@ -1,8 +1,9 @@
 //create a controller to implement the methods 
 myMoviesApp.controller('addMovieController',[
     'movieService',
-    '$scope', 
-    function (movieService,$scope) {
+    '$scope',
+    '$location',
+    function (movieService,$scope,$location) {
     
     //method to execute after submitting form details 
     $scope.addMovie = function () {
@@ -26,6 +27,9 @@ myMoviesApp.controller('addMovieController',[
 
         //send an alert method on the view template after removing the movie
         alert("Movie added successfully!");
+
+        //navigate to the movies page after adding the movie...
+        $location.path('/movies');
     }   
-    
+
 }]);

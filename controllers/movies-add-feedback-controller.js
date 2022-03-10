@@ -1,6 +1,7 @@
 myMoviesApp.controller('feedbackController', [
     'feedbackService',
     '$scope',
+    '$location',
     function (feedbackService, $scope , $location) {
 
         //method to execute after submittimg the feedback form
@@ -23,8 +24,9 @@ myMoviesApp.controller('feedbackController', [
 
             //show the alert notification on the template after user successfully giving the feedback
             alert("Feedback posted successfully!");
-            
-            // $location.path("/movies" );
+
+            //navigate to movies page after submitting the form
+            $location.path('/movies');
         }
-        
+
     }]);

@@ -13,18 +13,7 @@
             </div>  
 
             <div class="movie-action-list">
-                <button 
-                    class="orderby-movie-btn"
-                    ng-click = "orderByMovieName()">
-                    <!-- "order = 'movieName'" -->
-                    Order By Movie Name
-                </button>
-                <button 
-                    class="orderby-rating-btn"
-                    ng-click="order = '-movieRating'">
-                    Order By Rating
-                </button>
-                <button 
+                <div 
                     class="view-feedback-btn">
                     <a 
                         id="viewMoviesFeedbackField" 
@@ -32,8 +21,8 @@
                     >
                     View feedback
                     </a>
-                </button>
-                <button 
+                </div>
+                <div 
                     class="addmovie-btn">
                     <a 
                         id="addMoviesField" 
@@ -41,13 +30,13 @@
                     >
                     Add Movie
                     </a>
-                </button>
+                </div>
             </div>
             
             <div class="show_movies">
                 <div 
                     class="movies-as-cards"
-                    ng-repeat="movie in moviesList | orderBy: order | filter: searchMovie"    
+                    ng-repeat="movie in moviesList | orderBy: '-movieRating' | filter: searchMovie"    
                 >
                     <a ng-href="{{ movie.trailerUrl }}">
                         <img 
@@ -73,4 +62,3 @@
             </div>
             </div>
     </div>
-
